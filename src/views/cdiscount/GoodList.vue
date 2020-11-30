@@ -162,9 +162,9 @@ export default {
     },
     handleDel (record, index) {
       console.log('删除商品: ' + record.uid)
-      deleteGood(record.ID).then(
-        this.handleGetGoods()
-      )
+      deleteGood(record.ID).then(res => {
+        this.handleGetGoods(this.pagination)
+      })
     },
     tsToDate2 (timestamp) {
       return tsToDate(timestamp)

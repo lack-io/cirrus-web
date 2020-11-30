@@ -1,4 +1,4 @@
-import axios from '@/utils/request'
+import request from '@/utils/request'
 
 const api = {
   userList: '/api/v1/goods',
@@ -8,14 +8,14 @@ const api = {
 export default api
 
 export function getGoodList (page, size) {
-  return axios({
+  return request({
     url: api.userList + `?page=${page}&size=${size}`,
     method: 'get'
   })
 }
 
 export function deleteGood (id) {
-  return axios({
+  return request({
     url: api.deleteUser + '/' + `${id}`,
     method: 'delete',
     data: {}
